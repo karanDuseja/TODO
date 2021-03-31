@@ -1,0 +1,36 @@
+<p>listing works!</p>
+
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        
+        <th scope="col">email</th>
+        <th scope="col">password</th>
+        <th scope="col">first radio</th>
+        <th scope="col">second radio</th>
+        <th scope="col">action</th>
+        
+        
+    
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of serverData">
+        <th>{{list.email}}</th>
+        <td >{{list.password}}</td>
+        <td>{{list.radio}}</td>
+        <td>{{list.secondradio}}</td>
+        
+        <td><button class="btn btn-success" (click)=" serverUpdate(list._id)"  >edit</button><span class="px-2"></span><button class="btn btn-danger" (click)=" serverDelete(list._id)">delete</button></td>
+       
+      </tr>
+     
+    </tbody>
+  </table>
+
+  <button>
+    <a (click)="adr()" routerLinkActive="active">ADD NEW ENTRY</a>
+   </button>
+
+  

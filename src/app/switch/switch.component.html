@@ -1,0 +1,27 @@
+<ul class="nav nav-pills">
+    <li [class.active]="viewMode=='map'"><a (click)="viewMode='map'">map view </a></li>
+    <li [class.active]="viewMode=='list'"><a (click)="viewMode='list'">list view </a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">
+        <li (click)="go(test)" *ngFor= "let scores of test ">
+        {{scores.name}}
+    </li> </div>
+    <div *ngSwitchCase="'list'">
+        <li  (click)="go(test)" *ngFor= "let scores of test " >
+            {{scores.score}}
+        </li>
+       
+        <h2 class="btn btn-primary" (click)="onClick() "  >show </h2>
+        <div *ngFor= "let msg of msgUse" >
+            {{msg.name}}
+        </div>
+    </div>
+    <div *ngSwitchDefault>otherwise</div>
+</div>
+
+<h3 class="btn btn-primary" (click)="getItemAdd() "  >show form data</h3>
+<div *ngFor =" let form of formDataNew">{{form}}</div>
+
+<button (click)="sendData()" >send string to parent</button>
+
